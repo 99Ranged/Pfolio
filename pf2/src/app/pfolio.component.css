@@ -1,0 +1,62 @@
+h1{
+  color: chocolate;
+}
+
+.container
+{
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 50% 50%;
+}
+
+.circle{
+  grid-column: 3;
+  clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0);
+
+  animation: first 5s  ease ;
+  z-index: 999999;
+
+}
+
+.circle::after
+{
+
+
+    content: "";
+    display: block;
+    width: 100%;
+    height:0;
+    padding-bottom: 100%;
+    border: 2px solid salmon;
+
+    z-index: 999999;
+    background: transparent;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+
+
+}
+@keyframes first
+{
+  from{
+    z-index: 0;
+    transform: rotate(180deg);
+    order: 0px solid salmon;
+  }
+  100%{
+    transform: rotate(0deg);
+    order: 2px solid salmon;
+  }
+
+}
+
+#mask{
+  grid-column: 3;
+  overflow: hidden;
+  z-index: -1;
+  background-color: white;
+  position: relative;
+  clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0);
+  animation: nobg 5 s  ease ;
+}
