@@ -1,0 +1,11 @@
+<div class=intro [ngClass]="{'introopacity': show, 'introdisappear': begone}" >
+
+  <p id=WelcomeText>WHAT'S THE PASSWORD?</p>
+
+  <input id=InputPassword autofocus type="password" (keyup.enter)="show = !show; waitup()" >
+
+  <p id=CorrectText> Correct! </p>
+
+
+</div>
+
