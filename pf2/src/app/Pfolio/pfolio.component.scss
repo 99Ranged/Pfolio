@@ -4,14 +4,14 @@
 {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(3, 100vh);;
+  grid-template-rows: 40vh repeat(2, 100vh);;
   grid-template-areas:
   "hd    hd   hd   hd   hd "
   "main main main main main"
   ".    main main   .    .";
 
   transition: filter ease 1.3s;
-  filter: blur(0px); //-----------------------------Change later
+  filter: blur(4px); //-----------------------------Change later
 }
 
   .blurout
