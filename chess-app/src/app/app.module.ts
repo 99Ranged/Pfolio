@@ -1,20 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { PfolioComponent } from './Pfolio/pfolio.component';
+
 import { AppComponent } from './app.component';
-import { IntroComponent } from './Intro/intro.component';
-import { StyleSharingService } from './stylesharing.service';
+import { TablematrixComponent } from './tablematrix/tablematrix.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    IntroComponent,
-    PfolioComponent
+    TablematrixComponent
   ],
   imports: [
     BrowserModule
   ],
-  providers: [StyleSharingService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

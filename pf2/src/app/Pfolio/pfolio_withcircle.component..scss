@@ -1,0 +1,243 @@
+@import "../resources/introvariables";
+
+$newcolor: red;
+.btntest
+{
+  font-size: 24px;
+}
+
+/*---------------------------------------------------------------------------
+  Changing global vars -- just a test
+---------------------------------------------------------------------------*/
+$newcolor: blue;
+$newcolor: orange;
+
+header{
+  grid-column-start: 1;
+  grid-column-end: 6;
+  width: 100%;
+  height: 10%;
+  z-index: 999;
+  color: $newcolor;
+
+  -webkit-box-shadow: 0px 8px 6px 0px rgba(0,0,0,0.28);
+  -moz-box-shadow: 0px 8px 6px 0px rgba(0,0,0,0.28);
+  box-shadow: 0px 8px 6px 0px rgba(0,0,0,0.28);
+  background-color: rgba(255, 2550, 2550, 0.5);
+}
+
+.container
+{
+
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: repeat(5, 20%);
+  transition: all ease 1.3s;
+  filter: blur(3px);
+  box-sizing: border-box;
+
+}
+
+  .blurout
+  {
+    filter: blur(0px);
+  }
+
+
+    .circle::after
+    {
+
+      animation: firstrotate 2s  linear ;
+    }
+    .circleMask
+    {
+
+      animation: swapmaskpolygon linear;
+      animation-fill-mode: forwards;
+      animation-duration: 2s;
+    }
+    .hcircle::after
+    {
+
+      animation: activatehalfcircle linear;
+      animation-fill-mode: forwards;
+      animation-duration: 2s;
+    }
+
+  .spin::before {
+    border-top-color: $blue; // Show borders
+    border-right-color: $blue;
+    border-bottom-color: $blue;
+
+    transition:
+      border-top-color  0.7s linear, // Stagger border appearances
+      border-right-color 0.7s linear .5s,
+      border-bottom-color 0.7s linear 1s;
+  }
+
+   .spin::after {
+    border-top: 2px solid $blue; // Shows border
+    border-left-width: 2px; // Solid edges, invisible borders
+    border-right-width: 2px; // Solid edges, invisible borders
+    transform: rotate(270deg); // Rotate around circle
+    transition:
+      transform 1.2s linear 0s,
+      border-left-width 0s linear 1.5s; // Solid edge post-rotation
+  }
+
+  */
+
+
+//---------------------------------------------------------------------------
+//New circle test
+//-----------------------------------------------------------------------------
+
+.spin{
+  &::before,
+  &::after
+  {
+    grid-column-start: 3;
+    /* autoprefixer: off */
+    grid-column-end: 3;
+    grid-row-start: 1;
+    /* autoprefixer: off */
+    grid-row-end: 1;
+
+    border: 2px solid transparent;
+    top: 0;
+    left: 0;
+    color: $blue;
+  }
+
+
+
+}
+
+.newCircle
+{
+  &::before,
+  &::after
+  {
+    grid-column-start: 3;
+    /* autoprefixer: off */
+    grid-column-end: 3;
+    grid-row-start: 1;
+    /* autoprefixer: off */
+    grid-row-end: 1;
+
+
+    border-radius: 100%;
+    box-sizing: inherit;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%  ;
+  }
+}
+
+/*---------------------------------------------------------------------------------------------
+  OLD CIRCLE TEST
+---------------------------------------------------------------------------------------------*/
+
+
+.circle{
+  grid-column: 3;
+  grid-row: 2;
+
+  z-index: 9;
+  overflow: hidden;
+}
+
+.circle::after
+{
+  content: "";
+  overflow: hidden;
+  display: block;
+  width: 100%;
+  height:0;
+  padding-bottom: 100%;
+  border: 2px solid $newcolor;
+  z-index: 10;
+  background: transparent;
+  box-sizing: border-box;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+  // animation: firstrotate 6s  linear ; -- Commented for backup purposes, animation is inside blurout
+}
+
+// We have to change polygon(0 0, 50% 0, 50% 100%, 0 100%); after the second half (swap the masks)
+
+.circleMask
+{
+  grid-column: 3;
+  grid-row: 2;
+  background-color: white;
+  clip-path: polygon(50% 0, 100% 0%, 100% 100%, 50% 100%);
+}
+
+.hcircle
+{
+  grid-column: 3;
+  grid-row: 2;
+  clip-path: polygon(50% 0, 100% 0%, 100% 100%, 50% 100%);
+  &::after
+  {
+    content: "";
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    height:0;
+    padding-bottom: 100%;
+    border: 2px solid $newcolor;
+    z-index: 11;
+    background: transparent;
+    box-sizing: border-box;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    opacity: 0;
+  }
+}
+
+//---------------------------------------------------------------------------
+// Rotate the circle
+//---------------------------------------------------------------------------
+
+@keyframes firstrotate
+{
+  from{box-sizing: border-box; transform: rotate(0deg);}
+  to{box-sizing: border-box; transform: rotate(360deg);}
+}
+
+
+//---------------------------------------------------------------------------
+// Change opacity of the half circle
+//---------------------------------------------------------------------------
+
+
+@keyframes activatehalfcircle
+{
+  0%    {opacity: 0}
+  49.9% {opacity: 0}
+  50%   {opacity: 1}
+  100%  {opacity: 1}
+}
+
+
+
+//---------------------------------------------------------------------------
+// Change circle mask polygon(mask)
+//---------------------------------------------------------------------------
+
+
+@keyframes swapmaskpolygon
+{
+  0%    {clip-path: polygon(50% 0, 100% 0%, 100% 100%, 50% 100%);}
+  49.9% {clip-path: polygon(50% 0, 100% 0%, 100% 100%, 50% 100%);}
+  50%   {clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);}
+  100%  {clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);}
+}
+
+//----------------------------------------------------------------------------------------------

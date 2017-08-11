@@ -1,0 +1,41 @@
+@import "../resources/introvariables";
+
+.container
+{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 200px);;
+  grid-template-areas:
+  "hd    hd   hd   hd   hd "
+  "main main main main main"
+  ".    main main   .    .";
+
+  transition: filter ease 1.3s;
+  filter: blur(0px); //-----------------------------Change later
+}
+
+  .blurout
+  {
+    filter: blur(0px);
+  }
+
+.topbar
+{
+  grid-column-start: 1;
+  grid-column-end: 6;
+  grid-row: 1;
+  text-align: center;
+  padding: 2em;
+  background: $porttopbg;
+}
+
+.content
+{
+  grid-column-start: 1;
+  grid-column-end: 6;
+  grid-row: 2;
+  background: $portcontentbg;
+  text-align: center;
+  padding: 2em;
+
+}
