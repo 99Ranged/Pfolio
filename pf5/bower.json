@@ -1,0 +1,21 @@
+{
+  "name": "pf5",
+  "description": "",
+  "main": "",
+  "authors": [
+    "99Ranged <jamartins@primeit.pt>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/99Ranged/Pfolio",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "flag-css": "^0.0.11"
+  }
+}

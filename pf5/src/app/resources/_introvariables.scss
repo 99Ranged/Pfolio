@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import '../resources/icons/css/font-awesome.css';
+@import "../../../node_modules/flag-icon-css/css/flag-icon.css";
+@import "/mixins";
+/*
+  Global variables to be used
+*/
+
+  $newcolor: blue !default; //test var
+  $blue: blue; //new circle border color
+  $halfcircleopacity: 0 !default;
+
+
+// Porfolio colours
+  $porttopbg: #FAF9FF;
+  $portcontentbg: #40382C;
+
+
+//----------------------------------------------------------------
+//TOP SECTION
+//----------------------------------------------------------------
+
+  $welcomecolor: #40403B;
+  $welcomesize: 29px;
+  $ipcolor: #40403B;
+  $ipsize: 14px;
+
+//----------------------------------------------------------------
+//BODY CONTENT
+//----------------------------------------------------------------
+
+  $bodybg: #E8E8EA;
+  $circle1: #334D5C;
+  $circle2: #45B29D;
+  $circle3: #E27A3F;
+  $circle4: #334D5C;
+  $circle5: #FC4349;
+  $circle6: #45B29D;
+
+

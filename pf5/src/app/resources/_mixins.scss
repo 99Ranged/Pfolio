@@ -1,0 +1,22 @@
+@mixin create-circle($column-number, $row-number, $colorchosen, $degrees, $lessthanhalf, $percentage) {
+  grid-column: $column-number;
+  grid-row: $row-number;
+  background: rgba($colorchosen, 0.3);
+  @if $lessthanhalf == 'false'
+  {
+    background-image:
+    linear-gradient($degrees, transparent 50%, $colorchosen 50%),
+    linear-gradient(90deg, $colorchosen 50%, transparent 50%);
+  }
+  @else
+  {
+    background-image:
+    linear-gradient($degrees, $colorchosen $percentage, transparent 1%);
+  }
+
+}
+
+@mixin create-graycircle($column-number, $row-number) {
+  grid-column: $column-number;
+  grid-row: $row-number;
+}

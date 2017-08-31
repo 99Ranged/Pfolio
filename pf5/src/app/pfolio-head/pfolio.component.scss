@@ -1,0 +1,147 @@
+@import "../resources/introvariables";
+
+.header
+{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 80vh;
+  grid-template-areas:
+  "hd    hd   hd   hd   hd "
+  "main main main main main"
+  ".    main main   .    .";
+
+  transition: filter ease 1.3s;
+  filter: blur(0px); //------- If at 0, we are not using intro screen, change back to 4
+
+
+}
+
+  .blurout
+  {
+    filter: blur(0px);
+  }
+
+.topbar
+{
+  grid-column-start: 1;
+  grid-column-end: 6;
+  /* autoprefixer: off */
+  grid-row: 1 / 2;
+  text-align: center;
+  padding: 2em;
+  background: $porttopbg;
+  display: grid;
+  grid-template-rows: repeat(4, 25%);
+  grid-template-columns: repeat(5, 20%);
+  flex-direction: column ;
+  align-items: center;
+  justify-content: center;
+  .welcomeText
+  {
+    grid-area: 2 / 3 / 2/ 3;
+    font-family: 'Oswald', sans-serif;
+    color: $welcomecolor;
+    font-size: $welcomesize;
+    text-align: center;
+
+  }
+
+  .ipText
+  {
+
+    grid-area: 2 / 3 / 2/ 3;
+    align-self: end;
+    color: $ipcolor;
+    font-size: $ipsize;
+    font-family: 'Consolas';
+    text-align: center;
+    .animatedBar
+    {
+    color: $ipcolor;
+    font-weight: bold;
+    animation: flicker;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    }
+  }
+
+  @keyframes flicker
+  {
+    0%{}
+    24.99%{opacity: 1}
+    25%{opacity: 0}
+    49.99%{opacity: 0}
+    50%{opacity: 1}
+    74.99%{opacity: 1}
+    75%{opacity: 0}
+    99.9%{opacity: 0}
+    100%{opacity: 1}
+  }
+
+  hr
+  {
+
+    height: 1px;
+    border: 0;
+    border-top: 4px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+  }
+  #goDown
+  {
+    grid-area: 4 / 3 / 4/ 3;
+    font-size: 2  em;
+    color: $bodybg;
+    position: relative;
+    z-index: 6;
+    align-self: end;
+    top: 85%;
+  }
+  .circle
+  {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row: 4;
+    position: relative;
+    overflow: visible;
+    justify-self: center;
+    background: $porttopbg;
+    border-radius: 100%;
+    width: 69%;
+    height: 130%;
+    top:75%;
+  }
+}
+
+.trianglecontainer
+{
+  background: $bodybg;
+  height: 20vh;
+  width: 100%;
+  overflow: hidden;
+
+  &::after
+  {
+    content: ' ';
+    background: $porttopbg;
+    display: inline-block;
+    position:relative;
+    height: 161%;
+    width: 71%;
+    top: -285%;
+    left: -10%;
+    transform: rotate(-12deg);
+  }
+  &::before
+  {
+    content: ' ';
+    background: $porttopbg;
+    display: inline-block;
+    position:relative;
+    height: 161%;
+    width: 71%;
+    top: -122%;
+    right: -38%;
+    transform: rotate(12deg);
+  }
+}
