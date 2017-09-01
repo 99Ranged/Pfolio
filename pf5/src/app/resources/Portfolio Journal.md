@@ -30,3 +30,12 @@ Starting to input and layout the text.
   Fixed circles
   Starting content animation, with typescript
   Done dropdown animation in formação academica
+
+# Friday, sept 1st
+  Done content animation
+  Done fadein animation
+  Fixed in-viewport plugin
+  To:do
+    Add text to circles
+    Continue other sections
+    A colour picker for the background ??

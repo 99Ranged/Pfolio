@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { IntroComponent } from './Intro/intro.component';
 import { StyleSharingService } from './stylesharing.service';
 import { PfolioBodyComponent } from './pfolio-body/pfolio-body.component';
+import { ViewportModule } from 'angular2-viewport';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PfolioBodyComponent } from './pfolio-body/pfolio-body.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ViewportModule
   ],
   providers: [StyleSharingService],
   bootstrap: [AppComponent]

@@ -1,19 +1,22 @@
 <div class="container">
 
 
-  <div class="maskcontainer">
+  <div class="maskcontainer" [ngClass]="{'maskgodown':titleup}">
   </div>
   <div class="icons"><i class="fa fa-graduation-cap fa-2x" aria-hidden="true"></i> </div>
 
 
   <div class="CompAcademica">
-    <p class="TextTitleLeft comp"> Competências académicas </p>
-    <div class="circleborder one"><div class="graycircle one"></div> </div>
-    <div class="circleborder two"><div class="graycircle two"></div> </div>
-    <div class="circleborder three"><div class="graycircle three"></div> </div>
-    <div class="circleborder four"><div class="graycircle four"></div> </div>
-    <div class="circleborder five"><div class="graycircle five"></div> </div>
-    <div class="circleborder six"><div class="graycircle six"></div> </div>
+    <p class="TextTitleLeft comp" [ngClass]="{'titlemoveup':titleup}"
+    (vp-in-view)="changename(0)" [vp-in-view-config]="{marginTop: 50}"
+    > {{titlesarray[0]}}  </p>
+    <div class="circleborder one" [ngClass]="{'titlemoveup':circleup[0]}"><div class="graycircle one" (click)="changename(0)">
+      <p class="circletext">C#</p> </div></div>
+    <div class="circleborder two" [ngClass]="{'titlemoveup':circleup[1]}"><div class="graycircle two"></div> </div>
+    <div class="circleborder three" [ngClass]="{'titlemoveup':circleup[2]}"><div class="graycircle three"></div> </div>
+    <div class="circleborder four" [ngClass]="{'titlemoveup':circleup[3]}"><div class="graycircle four"></div> </div>
+    <div class="circleborder five" [ngClass]="{'titlemoveup':circleup[4]}"><div class="graycircle five"></div> </div>
+    <div class="circleborder six" [ngClass]="{'titlemoveup':circleup[5]}"><div class="graycircle six"></div> </div>
   </div>
   <div class="FormAcademica">
       <p class="TextTitleRight formaca"> Formação académica </p>
