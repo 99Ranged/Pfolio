@@ -1,9 +1,10 @@
 <div class="container">
 
+
   <div class="maskcontainer">
   </div>
-  <div class="maskcircle">
-  </div>
+  <div class="icons"><i class="fa fa-graduation-cap fa-2x" aria-hidden="true"></i> </div>
+
 
   <div class="CompAcademica">
     <p class="TextTitleLeft comp"> Competências académicas </p>
@@ -17,9 +18,9 @@
   <div class="FormAcademica">
       <p class="TextTitleRight formaca"> Formação académica </p>
       <!-- Make this a show / hide div -->
-      <i class="fa fa-chevron-right" (mouseenter)="shownovanow();" (mouseleave)="hidenovanow();" [ngClass]="{'rotatearrow': shownovavar}" aria-hidden="true"></i>
-      <p class="TextRight lic"> Licenciatura 2014 - 2017</p>
-      <p class="TextRight nova" [ngClass]="{'makevisible': shownovavar}"> Nova Information Management School </p>
+      <i class="fa fa-chevron-right" (mouseenter)="shownovanow();" (mouseleave)="hidenovanow();" [ngClass]="{'rotatearrow': shownovavar, 'rotatearrowback': hidenovavar}" aria-hidden="true"></i>
+      <p class="TextRight lic" (mouseenter)="shownovanow();" (mouseleave)="hidenovanow();"> Licenciatura 2014 - 2017</p>
+      <p class="TextRight nova" [ngClass]="{'makevisible': shownovavar, 'makeunvisible': hidenovavar}"> Nova Information Management School </p>
       <!-- Make this a show / hide div -->
       <p class="TextRight ano"> 12ºAno 2011 - 2014</p>
   </div>

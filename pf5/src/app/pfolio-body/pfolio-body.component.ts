@@ -12,6 +12,7 @@ export class PfolioBodyComponent implements OnInit {
   showdiv = false;
   inview = false;
   shownovavar = false;
+  hidenovavar = false;
   ngOnInit()
   {
     $(document).ready(function () {
@@ -24,11 +25,16 @@ export class PfolioBodyComponent implements OnInit {
 
   shownovanow()
   {
+    this.hidenovavar = false;
     this.shownovavar = true;
+    /*if(this.shownovavar = false)
+      {
+        this.hidenovavar = true;
+      }*/
   }
   hidenovanow()
   {
-    this.shownovavar = false;
+    this.hidenovavar = true;
   }
 
 }

@@ -26,3 +26,7 @@ Starting to input and layout the text.
 
 # Thrusday, 31 august
   To:do - Animate title content with css "content" animation
+          
+  Fixed circles
+  Starting content animation, with typescript
+  Done dropdown animation in formação academica

@@ -17,6 +17,7 @@
     /* autoprefixer: off */
     grid-row: 1 / 9;
     position: relative;
+    z-index: 2;
     display: inline-block;
     justify-self: center;
     width: 2%;
@@ -31,9 +32,10 @@
     /* autoprefixer: off */
     grid-row: 1 / 9;
     position: relative;
+    z-index: 4;
     display: inline-block;
     justify-self: center;
-    width: 6%;
+    width: 30%;
     background: $bodybg;
     animation: showbackbone ease;
     animation-fill-mode: forwards;
@@ -54,7 +56,25 @@
       from{transform: translateY(0%)}
       to{transform: translateY(90%)}
     }
+  }
 
+  //--------------------------
+  // Icons definition
+  //--------------------------
+  .icons
+  {
+    grid-area: 1 / 5 / 9 / 5;
+    display: grid;
+    grid-template-rows: repeat(5,20%);
+    .fa.fa-graduation-cap
+    {
+      grid-area: 1 / 1 / 1 / 1;
+      position: relative;
+      justify-self: center;
+      margin-top: 34px;
+      z-index: 3;
+      color: $welcomecolor;
+    }
   }
 }
 
@@ -71,6 +91,7 @@ p{
     text-align: right;
     font-weight: bold;
     font-size: 22px;
+    color: $welcomecolor;
   }
   &.TextTitleRight
   {
@@ -78,17 +99,21 @@ p{
     text-align: left;
     font-weight: bold;
     font-size: 22px;
+    color: $welcomecolor;
   }
   &.TextLeft
   {
-    font-family: 'Oswald Light', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 100;
     margin-left: 5%;
+    font-weight: lighter;
   }
   &.TextRight
   {
-    font-family: 'Oswald Light', sans-serif;
+    font-family: 'Oswald', sans-serif;
     margin-right: 5%;
     margin-left: 5%;
+    font-weight: lighter;
   }
 }
 
@@ -232,7 +257,7 @@ p{
   grid-row: 1;
   display: grid;
   grid-template-columns: min-content 1fr;
-  grid-template-rows: min-content min-content min-content min-content min-content;
+  grid-template-rows: 30% min-content min-content min-content min-content;
   .fa
   {
     grid-area: 2 / 1;
@@ -271,7 +296,6 @@ p{
 //-----------------------
 .makevisible
 {
-  display: inline;
   color: red;
   animation: shownovaims ease;
   animation-fill-mode: forwards;
@@ -279,14 +303,32 @@ p{
 
   @keyframes shownovaims {
     0% { height: 0}
-    50% {height: 16px; opacity: 0;}
+    30% {opacity: 0;}
+    80% {height: 16px; opacity: 1; }
     100% {opacity: 1; height: 16px;}
+  }
+}
+.makeunvisible
+{
+  animation: hidenovaims linear;
+  animation-fill-mode: forwards;
+  animation-duration: .2s;
+
+  @keyframes hidenovaims {
+    0% { height: 16px; opacity: 1;}
+    50% {height: 16px; opacity: 0;}
+    100% {opacity: 0; height: 0px;}
   }
 }
 .rotatearrow
 {
-  transition: transform linear 0.3s;
+  transition: transform ease 0.3s;
   transform: rotateZ(90deg);
+}
+.rotatearrowback
+{
+  transition: transform linear 0.1s;
+  transform: rotateZ(0deg);
 }
 
 .CompProf
@@ -306,3 +348,5 @@ p{
   grid-column: 6 / 9;
   grid-row: 4;
 }
+
+
