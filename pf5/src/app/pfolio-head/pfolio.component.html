@@ -1,6 +1,6 @@
 <div class="header" [ngClass]="{'blurout': styleservice.blureffect}">
-  <i  (click)=changename() class="fa fa-angle-down fa-5x"> </i>
-  <p class="testingmaps"  >{{namegoeshere}}</p>
+  <i  (click)="changename(0)" class="fa fa-angle-down fa-5x"> </i>
+  <p class="testingmaps"  >{{titlesarray[0]}}</p>
   <div class="topbar">
     <p class="welcomeText"> WELCOME TO MY </p>
     <p class="ipText">127 . 0 . 0 . 1 <span class="animatedBar"> |</span></p>
